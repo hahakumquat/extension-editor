@@ -123,7 +123,7 @@ Autodesk.ADN.Viewing.Extension.ExtensionEditor = function (viewer, options) {
         this.container.style.resize = "auto";
 
         var titleHeight = 35;
-        var errorHeight = 24;
+        var errorHeight = 100;
         var resizeTabHeight = 20;
         $("#" + baseId + "extensionEditorContent").css({
             width: "100%",
@@ -142,18 +142,21 @@ Autodesk.ADN.Viewing.Extension.ExtensionEditor = function (viewer, options) {
             bottom: 0
         });
         
-        $('#' + baseId + "extensionEditorContent")
+        $('#' + baseId + 'extensionEditorContent')
             .append('<button id="editor-submit" class="editor-button btn btn-xs">Apply</button>');
+        $('#' + baseId + 'extensionEditorContent')
+            .append('<textarea id="viewer-log-output" rows=8></textarea>');
 
         $(".editor-button").css({
-            'margin-left': '2px',
-            'margin-right': '2px',
-            'float': 'right'
+            position: 'absolute',
+            right: '10px',
+            top: 'calc(100% - ' + resizeTabHeight + 'px)'
         });
 
-        $("#editor-log").css({
-            color: 'white',
-            height: '24px',
+        $("#viewer-log-output").css({
+            resize: 'none',
+            width: '100%',
+            height: '100px',
             margin: '2 2 2 2'
         });
 
