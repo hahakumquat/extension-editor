@@ -1,1 +1,1 @@
-shader editor in viewer
+extension editor in viewer
